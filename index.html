@@ -115,17 +115,13 @@
                                     content: input
                                 }
                             ],
-                            threadId: "string",
-                            resourceId: "string",
-                            runId: "string",
-                            output: {}
+
                         })
                     });
 
                     const data = await response.json();
-                    listItem.textContent = typeof data['object']['response'] === 'string'
-                        ? data['object']['response']
-                        : JSON.stringify(data['object'], null, 2);
+                    console.log(data)
+                    listItem.textContent = data['text']
                 } catch (error) {
                     listItem.textContent = `Error - ${error.message}`;
                     listItem.classList.add('error');
